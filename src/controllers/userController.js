@@ -1,23 +1,9 @@
-// const userDetails = {
-//   schema: {
-//     response: {
-//       200: {
-//         type: "object",
-//         properties: {
-//           name: { type: "string" },
-//           email: { type: "string" },
-//           password: { type: "string", minLength: 8 },
-//           phone: { type: "string", pattern: `[0-9]{10}$` },
-//         },
-//       },
-//       require: true,
-//     },
-//   },
-// };
+import User from "../model/userModel.js";
 
 export async function getAllUsers(request, reply) {
   try {
-    reply.send("not implemented yet");
+    const users = await User.find();
+    reply.send(users);
   } catch (err) {
     reply.status(500).send(err);
   }
