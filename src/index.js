@@ -1,5 +1,7 @@
 import Fastify from "fastify";
 import mongoose from "mongoose";
+import jwt from " jsonwebtoken";
+var token = jwt.sign({ foo: "bar" }, "shhhhh");
 
 const fastify = Fastify({
   logger: true,

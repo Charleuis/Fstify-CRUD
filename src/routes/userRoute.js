@@ -8,8 +8,8 @@ import {
 
 async function userRoute(fastify, options) {
   fastify.get("/", getAllUsers);
-  fastify.post("/:id", signin);
-  fastify.post("/", createUser);
+  fastify.post("/signin", signin);
+  fastify.post("/signup", createUser);
   fastify.put("/:id", updateUser);
   fastify.delete("/:id", deleteUser);
 }
